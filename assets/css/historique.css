@@ -1,0 +1,85 @@
+.historique_container {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+.operation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.icon_operation {
+    width: 20%;
+}
+
+
+.material-symbols-outlined {
+    background-color: #eeecf7;
+    border-radius: 100em;
+    padding: 2vh;
+}
+
+.text_operation {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 55%;
+}
+
+.text_operation p {
+    font-weight: 800;
+}
+
+.credit {
+    color: rgb(43, 202, 43);
+    font-weight: 600;
+}
+
+.debit {
+    color: red;
+    font-weight: 600;
+
+}
+
+.text_operation sub {
+    color: gray;
+}
+
+
+.montant_operation {
+display: flex;
+flex-direction: column;
+height: 100%;
+width: 30%;
+align-items: flex-end;
+justify-content: space-around;
+}
+
+.montant {
+    font-weight: 800;
+    font-size: smaller;
+}
+
+
+.operation {
+    height: 5em;
+}
+
+.statut_success {
+    border: 1px solid rgb(43, 202, 43);
+    color: rgb(43, 202, 43);
+    border-radius: 100em;
+    font-size: x-small;
+    padding: .2vh 1vh;
+}
+
+.statut_error {
+    border: 1px solid rgb(202, 59, 43);
+    color: rgb(202, 59, 43);
+    border-radius: 100em;
+    font-size: x-small;
+    padding: .2vh 1vh;
+}

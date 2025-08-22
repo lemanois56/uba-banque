@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa8VvQ7O8Zz4aU7-Y5nt6Wktrdu4c00OSMvahXh4dzNxEO-mv8zKVfVzbrz0FPEeox1G0&usqp=CAU" type="image/x-icon">
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa8VvQ7O8Zz4aU7-Y5nt6Wktrdu4c00OSMvahXh4dzNxEO-mv8zKVfVzbrz0FPEeox1G0&usqp=CAU" type="image/x-icon">
+
+    <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://kit.fontawesome.com/618007f65e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/main.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/menu_bar.css" />
+    <link rel="stylesheet" href="assets/css/cartes.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>Mes cartes</title>
+  </head>
+  <body>
+    <script src="header.js"></script>
+    <div class="welcome">
+      <h4>Cartes</h4>
+    </div>
+    <div class="logout">
+      <i class="fas fa-power-off" style="font-size: 20px; color: red"></i
+      ><a href="javascript:logout()">Déconnexion</a>
+    </div>
+
+    <div class="container card_container mb-2">
+      <div class="card">
+        <div class="banque_name">
+          <p>CARTE BLACK</p>
+        </div>
+        <div class="puce_container">
+          <div class="puce_logo">
+            <img src="img/puce.png" alt="puce" />
+          </div>
+          <div class="wifi">
+            <img src="img/wifi.png" alt="wifi" />
+          </div>
+        </div>
+        <div class="number">
+          <h3>4157 45896 1245 3527 8912</h3>
+        </div>
+        <div class="expire">
+          <div class="expire_label">EXPIRE LE</div>
+          <div class="expire_date">10/25</div>
+        </div>
+
+        <div class="name_logo">
+          <div class="card_name with" style="white-space: nowrap;"> CARCASSIN BOISSEAU THIERRY </div>
+          <div class="logo_card">
+            <img src="img/visa.png" alt="logo_carte" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card_container">
+      <div class="settings_card">
+        <div class="back_white mb-1 statut_card">
+          <div class="icon_card">
+            <i class="fa fa-unlock-alt" style="font-size: 28px"></i>
+          </div>
+          <div class="text_card">
+            <p>Verrouiller la carte</p>
+            <p>Bloquez de façon temporaire</p>
+          </div>
+          <div class="toggle">
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div class="back_white mb-1 apple_pay">
+          <div class="icon_card">
+            <i class="fab fa-apple-pay" style="font-size: 28px"></i>
+          </div>
+          <div class="text_card">
+            <p>Activer Apple pay</p>
+            <p>Autoriser liaison à Apple pay</p>
+          </div>
+          <div class="toggle">
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div class="back_white mb-3 contactless">
+          <div class="icon_card">
+            <i class="material-icons" style="font-size: 28px">nfc</i>
+          </div>
+          <div class="text_card">
+            <p>Activer NFC</p>
+            <p>Activer paiement sans contact</p>
+          </div>
+          <div class="toggle">
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="title">
+      <h2>Votre gestionnaire</h2>
+    </div>
+    <script src="footer.js"></script>
+
+    <div class="navigation_bar">
+      <div class="navigation">
+        <ul>
+          <li class="list">
+            <a href="solde.html">
+              <span class="icon">
+                <ion-icon name="cash-outline"></ion-icon>
+              </span>
+              <span class="text">Solde</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="historique.html">
+              <span class="icon">
+                <ion-icon name="time-outline"></ion-icon>
+              </span>
+              <span class="text">Historique</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="virement.html">
+              <span class="icon">
+                <ion-icon name="swap-horizontal-outline"></ion-icon>
+              </span>
+              <span class="text">Virement</span>
+            </a>
+          </li>
+          <li class="list active">
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="card-outline"></ion-icon>
+              </span>
+              <span class="text">Cartes</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="rib.html">
+              <span class="icon">
+                <ion-icon name="document-outline"></ion-icon>
+              </span>
+              <span class="text">Rib</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const list = document.querySelectorAll(".list");
+      function activeLink() {
+        list.forEach((item) => item.classList.remove("active"));
+        this.classList.add("active");
+      }
+      list.forEach((item) => item.addEventListener("click", activeLink));
+    </script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

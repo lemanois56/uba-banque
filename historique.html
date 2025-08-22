@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa8VvQ7O8Zz4aU7-Y5nt6Wktrdu4c00OSMvahXh4dzNxEO-mv8zKVfVzbrz0FPEeox1G0&usqp=CAU" type="image/x-icon">
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa8VvQ7O8Zz4aU7-Y5nt6Wktrdu4c00OSMvahXh4dzNxEO-mv8zKVfVzbrz0FPEeox1G0&usqp=CAU" type="image/x-icon">
+    <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://kit.fontawesome.com/618007f65e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/main.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/menu_bar.css" />
+    <link rel="stylesheet" href="assets/css/historique.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>Historique</title>
+  </head>
+  <body>
+    <script src="header.js"></script>
+    <div class="welcome">
+      <h4>Mes opérations</h4>
+    </div>
+    <div class="logout">
+      <i class="fas fa-power-off" style="font-size: 20px; color: red"></i
+      ><a href="javascript:logout()">Déconnexion</a>
+    </div>
+
+
+
+    <div class="container back_white mb-2">
+      <h3>Historique des opérations</h3>
+    </div>
+
+
+    <div class="container back_white mb-5">
+
+      <div class="historique_container">
+
+               HISTORIQUE DES TRANSACTIONS 
+
+        <div class="operation">
+            <div class="icon_operation">
+                <span class="material-symbols-outlined">
+                    payments
+                    </span>                    
+            </div>
+            <div class="text_operation">
+<p>Transfert reçu</p>
+<sub>FR01 5484 1994 1879 6952 9526</sub>
+<sub>Date: 12/04/24</sub>
+            </div>
+            <div class="montant_operation">
+                <div class="montant">
+                    <p>+ 4500443 €</p>
+                </div>
+                <div class="statut statut_success">
+                    <p>Effectuer</p>
+                </div>
+            </div>
+        </div>
+
+
+
+<!--
+        <div class="operation">
+            <div class="icon_operation">
+                <span class="material-symbols-outlined">
+                  shopping_cart
+                    </span>                    
+            </div>
+            <div class="text_operation">
+<p>Abonnement téléphonique et internet orange</p>
+<sub>FR01 5484 1994 1879 6952 9526</sub>
+<sub>Date: 02/11/2023</sub>
+            </div>
+            <div class="montant_operation">
+                <div class="montant">
+                    <p>- 200 €</p>
+                </div>
+                <div class="statut statut_success">
+                    <p>Effectuer</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="operation">
+            <div class="icon_operation">
+                <span class="material-symbols-outlined">
+                    shopping_cart
+                    </span>                   
+            </div>
+            <div class="text_operation">
+<p>Abonnement NETFLIX</p>
+<sub>Plan premium</sub>
+<sub>Date: 29/11/2022</sub>
+            </div>
+            <div class="montant_operation">
+                <div class="montant">
+                    <p>- 7.99 €</p>
+                </div>
+                <div class="statut statut_success">
+                    <p>Effectuer</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="operation">
+            <div class="icon_operation">
+                <span class="material-symbols-outlined">
+                    credit_card
+                    </span>                    
+            </div>
+            <div class="text_operation">
+<p>Vinci Construction: achat de matériel BTP</p>
+<sub>**** **** **** **** 5874</sub>
+<sub>Date: 05/11/2023</sub>
+            </div>
+            <div class="montant_operation">
+                <div class="montant">
+                    <p>- 60.000,00 €</p>
+                </div>
+                <div class="statut statut_success">
+                    <p>Effectuer</p>
+                </div>
+            </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+-->
+
+
+    <div class="title">
+      <h2>Votre gestionnaire</h2>
+    </div>
+    <script src="footer.js"></script>
+
+    <div class="navigation_bar">
+      <div class="navigation">
+        <ul>
+          <li class="list">
+            <a href="solde.html">
+              <span class="icon">
+                <ion-icon name="cash-outline"></ion-icon>
+              </span>
+              <span class="text">Solde</span>
+            </a>
+          </li>
+          <li class="list active">
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="time-outline"></ion-icon>
+              </span>
+              <span class="text">Historique</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="virement.html">
+              <span class="icon">
+                <ion-icon name="swap-horizontal-outline"></ion-icon>
+              </span>
+              <span class="text">Virement</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="cartes.html">
+              <span class="icon">
+                <ion-icon name="card-outline"></ion-icon>
+              </span>
+              <span class="text">Cartes</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="rib.html">
+              <span class="icon">
+                <ion-icon name="document-outline"></ion-icon>
+              </span>
+              <span class="text">Rib</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const list = document.querySelectorAll(".list");
+      function activeLink() {
+        list.forEach((item) => item.classList.remove("active"));
+        this.classList.add("active");
+      }
+      list.forEach((item) => item.addEventListener("click", activeLink));
+    </script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

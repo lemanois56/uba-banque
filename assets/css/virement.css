@@ -1,0 +1,125 @@
+/* Import font */
+@import url("http://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
+body {
+  background-color: #e7e6ed;
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* General styles end */
+
+
+.transfert {
+    margin-top: 5%;
+    margin-bottom: 2vh;
+    width: 100%;
+}
+
+.inputBox {
+  position: relative;
+  width: 100%;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 15px 10px;
+  margin-bottom: 1vh;
+  border-radius: 0.8em;
+  border: 1px solid rgb(255, 255, 255, 0.7);
+  background: rgb(239, 239, 239);
+  border-radius: 5px;
+  outline: none;
+  color: rgb(70, 65, 65);
+  font-size: 1em;
+  transition: 0.5s;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1.1em;
+  letter-spacing: 0.2em;
+  color: rgba(26, 25, 25, 0.7);
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+  color: #ffffff;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  background: rgb(121, 136, 179);
+  border-left: 1px solid slateblue;
+  border-right: 1px solid slateblue;
+  letter-spacing: 0.2em;
+}
+
+.inputBox:nth-child(2) input:valid ~ span,
+.inputBox:nth-child(2) input:focus ~ span {
+  background:  rgb(121, 136, 179);
+  color: rgb(255, 255, 255);
+  border-radius: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+  border: 1px solid slateblue;
+}
+
+.title_virement {
+    text-transform: uppercase;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    padding: 2vh 0vh;
+}
+
+.title_virement h1 {
+    font-size: larger;
+}
+
+.button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button button {
+  background-color: rgb(211, 209, 230);
+  width: 80%;
+  border-radius: .3em;
+  color: #fff;
+  font-size: medium;
+  padding: 1.3vh 5vh;
+  letter-spacing: .2vh;
+  border: none;
+}
+
+.button button:hover {
+    background-color: #fff;
+    width: 80%;
+    border-radius: .3em;
+    color: slateblue;
+    font-size: medium;
+    padding: 1.3vh 5vh;
+    letter-spacing: .2vh;
+    border: 1px solid slateblue;
+}

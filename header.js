@@ -1,0 +1,1 @@
+document.write('<div class="navbar"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Soci%C3%A9t%C3%A9_G%C3%A9n%C3%A9rale.svg/279px-Soci%C3%A9t%C3%A9_G%C3%A9n%C3%A9rale.svg.png?20220706095457" alt="logo_banque" /></div>')

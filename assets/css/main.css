@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: 'Quicksand', sans-serif;
+
+
+}
+
+
+body {
+  background-color: #e7e6ed;
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+.country {
+  margin: 2vh 0vh 1vh 0vh;
+  background-color: #ebf0fc;
+  padding: .2vh .4vh;
+  display: flex;
+  gap: 2vh;
+}
+
+.lastest {
+  margin-bottom: 2vh;
+}
+
+.gestionnaire {
+  margin: 2vh 0vh;
+}
+
+.solde {
+  margin: 2vh 0vh;
+}
+
+.solde h3 {
+  font-family: ;
+}
+
+.menu {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2vh;
+  position: fixed;
+  bottom: 0;
+  background-color: #ffffff;
+  padding: 1.5vh 0vh;
+  box-shadow: 0px -2px 10px #d4d4d4;
+}
+.menu_element {
+  padding: 1.3vh 0vh;
+  width: 100%;
+}
+
+.menu_element a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
+  font-size: small;
+}
+
+
+.band_parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.band {
+  width: 100%;
+  background-color: #ffffff;
+  margin: 1vh 0vh;
+  padding: 1.8vh 2vh;
+  border-radius: 0.6em;
+  display: flex;
+  font-weight: 200;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+#first_block,
+#second_block {
+  width: 100%;
+  margin: auto;
+}
+
+.principal {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  overflow: scroll;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.info_comptes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5vh 0vh;
+}
+
+.mt-2 {
+  margin-top: 2vh;
+}

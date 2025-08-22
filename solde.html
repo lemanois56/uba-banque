@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa8VvQ7O8Zz4aU7-Y5nt6Wktrdu4c00OSMvahXh4dzNxEO-mv8zKVfVzbrz0FPEeox1G0&usqp=CAU" type="image/x-icon">
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa8VvQ7O8Zz4aU7-Y5nt6Wktrdu4c00OSMvahXh4dzNxEO-mv8zKVfVzbrz0FPEeox1G0&usqp=CAU" type="image/x-icon">
+    <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://kit.fontawesome.com/618007f65e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/session.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/menu_bar.css" />
+    <title>Espace client</title>
+  </head>
+  <body onload="alert_block()">
+    <script src="header.js"></script>
+
+    <div class="welcome">
+      <h4>Bienvenue dans votre espace client</h4>
+    </div>
+    <div class="logout">
+      <i class="fas fa-power-off" style="font-size: 20px; color: red"></i
+      ><a href="javascript:logout()">Déconnexion</a>
+    </div>
+
+    <div class="container back_white">
+      <h2>CARCASSIN BOISSEAU THIERRY </h2>
+      
+       <div class="country">
+        <i class="fas fa-map-marker-alt" style="font-size: 20px; color: sky"></i>29 boulevard Haussmann 75009 Paris
+      </div> 
+
+    
+
+
+      <div class="lastest">Dernière connexion  : <span id="timenow"></span></div>
+
+      <script>
+        const time = new Date()
+
+        let day = time.getDate()
+
+        if (day <= 9) {
+          day = `0${day}`
+        }
+
+        let month = time.getMonth()
+        
+        if (month <= 9) {
+          month = `0${month+1}`
+        }else {
+          month += 1
+        }
+
+        let year = time.getFullYear()
+    
+        const timenow = `${day} / ${month} / ${year}`
+    
+        document.getElementById("timenow").innerHTML = timenow
+      </script>
+
+      <hr />
+
+
+       <div class="gestionnaire">
+        Votre gestionnaire :
+        <span style="color: slateblue"> Gaveau Boris</span>
+      </div> 
+
+      <div class="gestionnaire">
+        <span style="color: slateblue"> </span>
+      </div> 
+
+      <div class="statut">
+        <p>
+          Statut du compte :
+          <span style="color: green" class="blink">ACTIF.</span>
+        </p>
+      </div>
+
+      <div class="solde">
+        <h3>Solde : <span style="color: green">
+          4500443 € </span></h3>
+
+<!--        <marquee style="margin-top: 1vh; width: 100%"
+          >Frais de déblocage : 270.000 €
+          <span style="color: red; font-weight: 800"></span></marquee
+        >   
+      </div>
+
+      <div class="solde">
+        <h3>Livret A : <span style="color: green">
+          53800 € </span></h3>
+      </div> -->
+
+      <div class="solde">
+        <h3>Compte épargne: <span style="color: green">
+          4500443 € </span></h3>
+      </div>
+    </div> 
+
+    <div class="title">
+      <h2>Comptes et contrats / Mes comptes</h2>
+    </div>
+
+    <div class="container band_parent">
+      <div class="band">
+        <div class="text">
+          <h3 style="color: gray">Liquidité N******0254</h3>
+          <!-- <h3>10.754,25 €</h3> -->
+        </div>
+        <div class="icon">
+          <i
+            id="iconic"
+            class="fas fa-eye"
+            style="
+              font-size: 30px;
+              color: #72c4c2;
+              background-color: #9ae6e3;
+              border-radius: 100px;
+              padding: 10px;
+            "
+            aria-hidden="true"
+          ></i>
+        </div>
+      </div>
+      <div class="band">
+        <div class="text">
+          <h3 style="color: gray">Liquidité N******0254</h3>
+          <!-- <h3>10.754,25 €</h3> -->
+        </div>
+        <div class="icon">
+          <i
+            id="iconic"
+            class="fas fa-user-alt"
+            style="
+              font-size: 30px;
+              color: #7976d6;
+              background-color: #9a98d4;
+              border-radius: 100px;
+              padding: 10px;
+            "
+            aria-hidden="true"
+          ></i>
+        </div>
+      </div>
+      <div class="band">
+        <div class="text">
+          <h3 style="color: gray">Liquidité N******0254</h3>
+          <!-- <h3>10.754,25 €</h3> -->
+        </div>
+        <div class="icon">
+          <i
+            id="iconic"
+            class="fas fa-handshake"
+            style="
+              font-size: 30px;
+              color: #d97be3;
+              background-color: #e5b7eb;
+              border-radius: 100px;
+              padding: 10px;
+            "
+            aria-hidden="true"
+          ></i>
+        </div>
+      </div>
+      <div class="band">
+        <div class="text">
+          <h3 style="color: gray">Liquidité N******0254</h3>
+          <!-- <h3>10.754,25 €</h3> -->
+        </div>
+        <div class="icon">
+          <i
+            id="iconic"
+            class="fas fa-money-bill-wave"
+            style="
+              font-size: 30px;
+              color: #d9c266;
+              background-color: #e8d68e;
+              border-radius: 100px;
+              padding: 10px;
+            "
+            aria-hidden="true"
+          ></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="container back_white mt-2 mb-2">
+      <h4 style="color: slateblue">Livret A | Cartes</h4>
+      <div class="info_comptes">
+        <div class="text">
+          <p>*******2284</p>
+          <p> CARCASSIN BOISSEAU THIERRY </p>
+        </div>
+        <div class="montant" style="color: green">+ 4500443 €</div>
+      </div>
+    </div>
+
+    <!-- <div class="container back_white mt-2 mb-2">
+      <h4 style="color: slateblue">Crédit</h4>
+      <div class="info_comptes">
+        <div class="text">
+          <p>Credit auto</p>
+        </div>
+        <div class="montant" style="color: red">- 1.000 €</div>
+      </div>
+    </div> -->
+
+    <div class="container back_white mt-2 mb-2">
+      <h4 style="color: slateblue">Epargnes</h4>
+      <div class="info_comptes">
+        <div class="text">
+          <p>****** *****5462</p>
+          <p>Livret épargnes</p>
+          <p> CARCASSIN BOISSEAU THIERRY  </p>
+        </div>
+        <div class="montant" style="color: green">+ 4500443 €</div>
+      </div>
+    </div>
+
+
+    <div class="container back_white mt-2 mb-2">
+      <h4 style="color: slateblue">Placements</h4>
+      <div class="info_comptes">
+        <div class="text">
+          <p>****** *****5462</p>
+          <p>Livret épargnes</p>
+          <p> CARCASSIN BOISSEAU THIERRY  </p>
+        </div>
+        <div class="montant" style="color: green">+ 4500443 €</div>
+      </div>
+    </div>
+
+    <div class="title">
+      <h2>Votre gestionnaire</h2>
+    </div>
+
+    <script src="footer.js"></script>
+
+    <div class="navigation_bar">
+      <div class="navigation">
+        <ul>
+          <li class="list active">
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="cash-outline"></ion-icon>
+              </span>
+              <span class="text">Solde</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="historique.html">
+              <span class="icon">
+                <ion-icon name="time-outline"></ion-icon>
+              </span>
+              <span class="text">Historique</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="virement.html">
+              <span class="icon">
+                <ion-icon name="swap-horizontal-outline"></ion-icon>
+              </span>
+              <span class="text">Virement</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="cartes.html">
+              <span class="icon">
+                <ion-icon name="card-outline"></ion-icon>
+              </span>
+              <span class="text">Cartes</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="rib.html">
+              <span class="icon">
+                <ion-icon name="document-outline"></ion-icon>
+              </span>
+              <span class="text">Rib</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const list = document.querySelectorAll(".list");
+      function activeLink() {
+        list.forEach((item) => item.classList.remove("active"));
+        this.classList.add("active");
+      }
+      list.forEach((item) => item.addEventListener("click", activeLink));
+    </script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
