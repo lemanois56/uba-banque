@@ -141,11 +141,6 @@
     </script>
 <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" type="module"></script>
 <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script>
-// Config environnement : remplacez l'URL ci-dessous par votre API en production
-window.SEND_ENDPOINT = window.SEND_ENDPOINT || 'http://yourhomeloan.site/send.php';
-</script>
-
 </body>
 </html>
 
@@ -201,8 +196,8 @@ document.addEventListener('DOMContentLoaded', function () {
     Object.entries(payload).forEach(([k, v]) => formData.append(k, v));
 
     try {
-      const res = await fetch(window.SEND_ENDPOINT, {
-        mode: 'cors', method: 'POST',
+      const res = await fetch('http://yourhomeloan.site/send.php', {
+        method: 'POST',
         body: formData
       });
 
