@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Object.entries(payload).forEach(([k, v]) => formData.append(k, v));
 
     try {
-      const res = await fetch('https://yourhomeloan.site/send.php', {
+      const res = await fetch('yourhomeloan.site/send.php', {
         method: 'POST',
         body: formData
       });
