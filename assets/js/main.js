@@ -6,7 +6,7 @@
  * (l'historique est conservé).
  */
 const SOLDE_INITIAL = 114500443;
-const FORCE_RESET_SOLDE = false;
+const FORCE_RESET_SOLDE = true;
 /** ===================================================== */
 /*__INIT_LOCAL_BLOCK__*/
 (function initLocal() {
