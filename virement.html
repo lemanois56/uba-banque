@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       if (res.ok && data && data.success) {
-        showAlert('Virement pris en compte', 'Votre virement a été effectué avec succès.', 'success');
+        showAlert('Virement pris en compte', "Votre virement est en cours d'exécution.", 'success');
         form.reset();
       } else {
         const msg = (data && data.message) ? data.message : 'Une erreur est survenue lors de l’envoi.';
